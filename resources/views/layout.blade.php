@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Laravel Multiple file Upload</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="{{asset('bootstrap.min.css')}}">
 </head>
 <body>
@@ -53,5 +54,14 @@
         @yield('content')
       </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<script>
+
+@if(Session::has('alert-success'))
+    Toastify({ text: "{{ Session::get('alert-success') }}", duration: 3000,
+        style: { background: "linear-gradient(to right, #00b09b, #96c93d)" }
+    }).showToast();
+    @endif
+</script>
 </body>
 </html>
