@@ -25,7 +25,7 @@
                 </div>
                 <div class="form-group mt-3">
                     <label for="title">Product Price:</label>
-                    <input type="text" name="price" class="form-control @error('price') is-invalid @enderror">
+                    <input type="number" name="price" class="form-control @error('price') is-invalid @enderror">
                     <span class="text-danger">
                         @error('price')
                         {{$message}}
@@ -80,7 +80,7 @@
                         <td>{{$product->created_at}}</td>
                         <td>{{$product->images->count()}}</td>
                         <td>
-                            <button class="btn btn-success">View</button>
+                            <a href="{{url('/product-detail/'.$product->id)}}" class="btn btn-success">View</a>
                         </td>
                     </tr>
                     @endforeach
